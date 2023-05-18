@@ -1,0 +1,200 @@
+/**/
+/*最初に設定しておく項目*/
+html{
+    font-size: 100%; /*100%で常時16pxの設定になる*/
+
+}
+
+body{
+    color: #24292e;
+    font-family: "Sawarabi Mincho";
+}
+
+a{
+    text-decoration: none; /*aタグのアンダーラインを常時消せる*/
+}
+
+p{
+    font-size: 1.3rem;/*remで書くことで基本の16pxが変わる度に自動で変更される*/
+}
+
+img{
+    max-width: 100%; /*写真のサイズが小さくなった時に自動で合わせる*/
+}
+
+li{
+    list-style: none; /*箇条書きのマークを消す*/
+    font-size: 1.2rem;
+}
+
+.site-title{
+    line-height: 1px; /*文字行の幅を指定*/
+    font-weight: 600px; /*文字の太さ*/
+    font-size: 2.4rem;
+}
+
+.site-title a{
+    color: #24292e;
+}
+
+.wrapper{
+    max-width: 960px; /*箱のサイズを決めておく*/
+    margin: 0 auto 130px auto;
+    font-size: 0.9rem;
+    padding: 0 4%;
+
+}
+
+.sec-title{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+/* header */
+header{
+    max-width: 960px;
+    display: flex; /*flexboxを適用する際にcssで必要な宣言*/
+    align-items: center; /*flexboxのひとつ　子要素をどこのラインで揃えるか調整する時に使う*/
+    justify-content: space-between; /*flexboxのひとつ　子要素を左寄せ右寄せにしたり、余白調整に使う*/
+    margin: 0 auto; /*ブロック要素を中央に配置する*/
+    padding: 0 4%;   /*画面が小さくなってもサイドの余白を保てる*/
+    height: 170px;
+}
+
+header ul{
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+
+}
+
+header ul li{
+    font-size: 0.9rem;
+    margin-left: 30px;
+}
+
+header ul li a{
+    color: #24292e;
+    transition: all 0.3s; /*変化時間の指定*/
+}
+
+header ul li a:hover{ /*　:hoverでカーソルが乗った時の動きを加える*/
+    opacity: 0.5; /*透明度調節　maxが1で小さくなるごとに薄くなる*/
+    
+}
+
+header li img.icon{
+    width: 30px;
+}
+
+/* main */
+.main{
+    margin-bottom: 80px;
+}
+
+.main img{
+    width: 100%;
+    max-width: 1920px;
+    height: 400px;
+    object-fit: cover; /*縦横比が崩れた画像を正しい比に直す*/
+}
+
+/* about */
+.about ul{
+    margin-bottom: 30px;
+}
+
+.about ul li:first-child{
+    margin-bottom: 30px;
+}
+
+.about ul li{
+    margin-bottom: 3px;
+}
+
+.works-wrapper{
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+.works-wrapper ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.works-wrapper ul li{
+    width: 31%;
+    margin-bottom: 23px;
+}
+
+.works-wrapper ul li img{
+    cursor: pointer;
+}
+
+.works-wrapper ul li img:hover{
+    transform: scale(1.2,1.2);
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+
+/* news */
+.news-wrapper{
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.news-wrapper dl{
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #c8c8c8;
+    margin-bottom: 20px;
+}
+
+.news-wrapper dl dt{
+    width: 20%;
+    border-bottom: 1px solid #c8c8c8;
+    padding: 15px;
+}
+
+.news-wrapper dl dd{
+    width: 80%;
+    border-bottom: 1px solid #c8c8c8;
+    padding: 15px;
+}
+
+/* SP */
+@media screen and (max-width: 600px){ /*レスポンシブ対応宣言　横が600px以下で反応する*/
+    .site-title{
+        margin-top: 20px;
+    }
+
+    /* header */
+    header{
+        flex-direction: column; /*子要素の並び方向に対して垂直に並べ直す*/
+        height: auto;
+        line-height: 40px;
+        margin-top: 20px;
+
+    }
+
+    header li{
+        font-size: 0.8rem;
+        margin-left: 20px;
+    }
+
+    header li img.icon{
+        width: 20px;
+        margin-top: 15px;
+    }
+
+    .works-wrapper ul{
+        flex-direction: column;
+    }
+
+    .works-wrapper ul li{
+        width: 30%;
+    }
+}
